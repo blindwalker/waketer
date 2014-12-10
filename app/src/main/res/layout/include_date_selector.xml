@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_height="wrap_content">
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="MON"
+        android:layout_weight="0.14"
+        android:id="@+id/monday"
+        style="@style/repeatDayStyle" />
+
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TUE"
+        android:layout_weight="0.14"
+        android:id="@+id/tuesday"
+        style="@style/repeatDayStyle"
+        android:textStyle="bold" />
+
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="WED"
+        android:layout_weight="0.14"
+        android:id="@+id/wednesday"
+        style="@style/repeatDayStyle" />
+
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="THU"
+        android:layout_weight="0.14"
+        android:id="@+id/thursday"
+        style="@style/repeatDayStyle" />
+
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="FRI"
+        android:layout_weight="0.14"
+        android:id="@+id/friday"
+        style="@style/repeatDayStyle" />
+
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SAT"
+        android:layout_weight="0.14"
+        android:id="@+id/saturday"
+        style="@style/repeatDayStyle" />
+
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SUN"
+        android:layout_weight="0.14"
+        android:id="@+id/sunday"
+        style="@style/repeatDayStyle" />
+</LinearLayout>

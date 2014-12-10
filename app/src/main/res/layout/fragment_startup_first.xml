@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/slideview_image_three">
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="The music"
+        android:id="@+id/textView"
+        android:layout_gravity="center"
+        android:gravity="center|center_vertical"
+        android:shadowDx= "5"
+        android:shadowDy= "5"
+        android:shadowRadius="5"
+        android:shadowColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textSize="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="30dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp" />
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView2"
+        android:layout_gravity="center"
+        android:gravity="center_vertical|center_horizontal"
+
+        android:shadowDx= "5"
+        android:shadowDy= "5"
+        android:shadowRadius="5"
+        android:shadowColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Our Last.fm powered search engine delivers tons of artists and tracks" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="27dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/last_fm_icon"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+</RelativeLayout>

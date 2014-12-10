@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">waketer</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="last_fm_api_key">feb9061b110c69c025cdd715e10c5879</string>
+    <string name="last_fm_url">http://ws.audioscrobbler.com/2.0/?method=</string>
+    <string name="addFirstBand">Time to add your first Artist!</string>
+    <string name="band_hint">e.g. Metallica</string>
+    <string name="addSong">Add a Song</string>
+    <string name="add_song">Add this Song</string>
+    <string name="searching_song">Searching for song..</string>
+    <string name="song_search_error">We couldn\'t find that one.. try another song instead!</string>
+    <string name="error_searching_band">We couldn\'t find that one.. try another name instead!</string>
+    <string name="title_activity_fallback_sound">FallbackSoundActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="addFallback">Choose a fallback sound</string>
+    <string name="setAlarm">Set alarm</string>
+    <string name="error_timeout">This took too long, please check your internet connection or try again later.</string>
+    <string name="searching_band">Loading artist..</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="alarms">Alarms</string>
+    <string name="bands">Bands</string>
+    <string name="settings">Settings</string>
+
+</resources>

@@ -1,0 +1,86 @@
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#DD000000"    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="fill_parent">
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/setAlarm"
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:shadowDx= "5"
+            android:shadowDy= "5"
+            android:shadowRadius="5"
+            android:shadowColor="#000000"
+            android:textColor="#FFFFFF"
+            android:textSize="27dp"
+            android:padding="40dp" />
+
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:id="@+id/alarmTime"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:shadowDx= "5"
+            android:shadowDy= "5"
+            android:shadowRadius="5"
+            android:shadowColor="#000000"
+            android:textColor="@color/blue"
+            android:textSize="80dp"
+            android:padding="40dp" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeat"
+            android:gravity="center"
+            android:shadowDx= "5"
+            android:shadowDy= "5"
+            android:shadowRadius="5"
+            android:textColor="@color/white"
+            android:paddingLeft="14dp"
+            android:textSize="20sp"
+            />
+
+        <include layout="@layout/include_date_selector"/>
+
+        <Button
+            android:id="@+id/button01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fallback" />
+
+    </LinearLayout>
+
+    <at.kropf.waketer.customviews.FontedButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set alarm"
+        android:layout_gravity="center_horizontal"
+        android:background="#2179c6"
+        android:padding="15dp"
+        android:textSize="34sp"
+        android:gravity="bottom"
+        android:id="@+id/setAlarm"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+</RelativeLayout>
+
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="fab_width_normal">250dp</dimen>
+    <dimen name="fab_height_normal">50dp</dimen>
+</resources>

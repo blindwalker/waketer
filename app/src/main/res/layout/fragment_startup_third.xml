@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/slide_cat"
+    android:gravity="center_horizontal">
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="The awakening"
+        android:id="@+id/textView"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:shadowDx= "5"
+        android:shadowDy= "5"
+        android:shadowRadius="5"
+        android:shadowColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textSize="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="30dp"
+        android:paddingTop="20dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="5dp" />
+
+    <at.kropf.waketer.customviews.FontedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Let your favourite artist help you getting out of bed"
+        android:id="@+id/textView2"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical|center_horizontal"
+        android:shadowDx= "5"
+        android:shadowDy= "5"
+        android:shadowRadius="5"
+        android:shadowColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <at.kropf.waketer.customviews.FontedButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get started"
+        android:layout_gravity="center_horizontal"
+        android:background="#2179c6"
+        android:padding="15dp"
+        android:textSize="34sp"
+        android:gravity="bottom"
+        android:id="@+id/getStarted"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp" />
+</RelativeLayout>
