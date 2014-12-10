@@ -1,22 +1,29 @@
 package at.kropf.waketer.fragments;
 
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Transformation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.zenkun.datetimepicker.time.RadialPickerLayout;
-import com.zenkun.datetimepicker.time.TimePickerDialog;
-
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 import at.kropf.waketer.R;
+import at.kropf.waketer.customviews.FontedTextView;
 import at.kropf.waketer.helper.AlarmDBHelper;
 import at.kropf.waketer.helper.AlarmManagerHelper;
 import at.kropf.waketer.helper.ClickToggleHelper;
@@ -26,7 +33,8 @@ import at.kropf.waketer.model.AlarmModel;
  * Created by martinkropf on 02.12.14.
  *
  */
-public class AlarmFragment extends Fragment implements View.OnClickListener{
+public class AlarmFragment extends Fragment
+        implements View.OnClickListener, Animation.AnimationListener {
 
     RingtoneManager mRingtoneManager;
     Button setAlarm;
@@ -34,30 +42,23 @@ public class AlarmFragment extends Fragment implements View.OnClickListener{
     String title;
     static final int DEFAULTDATESELECTOR_ID = 0;
     private Boolean pickerOpen = false;
-    TimePickerDialog time;
     private AlarmDBHelper dbHelper;
+
+    private ScrollView hourSlider;
 
     private AlarmModel alarmDetails;
 
-    private TextView alarmText;
+    private FontedTextView alarmTextHour;
+
+    private TextView alarmTextMinute;
+
+    private Boolean isVisible = false;
 
     private int currentHour;
 
     private int currentMinute;
 
     private HashMap<TextView, Boolean> repeatDay;
-
-    private TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener() {
-        @Override
-        public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
-            alarmText.setText(String.format("%02d", hourOfDay)+":"+
-                    String.format("%02d", minute));
-            currentHour = hourOfDay;
-            currentMinute = minute;
-            pickerOpen = false;
-
-        }
-    };
 
     private void setAlarm(){
         alarmDetails.timeMinute = currentMinute;
@@ -82,39 +83,71 @@ public class AlarmFragment extends Fragment implements View.OnClickListener{
 
     }
 
-    private void openTimePicker(){
-        if(currentMinute == 0 && currentHour == 0){
-            Calendar c = Calendar.getInstance();
-            currentHour =  c.get(Calendar.HOUR);
-            currentMinute =  c.get(Calendar.MINUTE);
-        }
-        time = TimePickerDialog.newInstance(listener , currentHour, currentMinute, true);
-        if(!pickerOpen){
-            time.show(getActivity().getSupportFragmentManager(), "Choose wisely");
-            pickerOpen = true;
-
-        }
-
-
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.activity_set_alarm, container, false);
+        final View rootView = inflater.inflate(R.layout.activity_set_alarm, container, false);
 
         dbHelper = new AlarmDBHelper(getActivity());
+        repeatDay = new HashMap<TextView, Boolean>();
 
-        alarmText = (TextView) rootView.findViewById(R.id.alarmTime);
+        alarmTextHour = (FontedTextView) rootView.findViewById(R.id.alarmTimeHour);
+        alarmTextMinute = (TextView) rootView.findViewById(R.id.alarmTimeMinute);
 
-        alarmText.setOnClickListener(new View.OnClickListener() {
+        Calendar c = Calendar.getInstance();
+
+        alarmTextHour.setText(String.format("%02d", c.get(Calendar.HOUR))+"");
+        alarmTextMinute.setText(":"+String.format("%02d", c.get(Calendar.MINUTE))+"");
+
+        String theId = "hour" + String.format("%02d", c.get(Calendar.HOUR));
+        int hourId = getActivity().getResources().getIdentifier(theId, "id", getActivity().getPackageName());
+
+        TextView hour = (TextView)rootView.findViewById(hourId);
+        hour.setTextColor(getResources().getColor(R.color.blue));
+
+        hourSlider = (ScrollView) rootView.findViewById(R.id.hour_slider);
+        hourSlider.setVisibility(View.VISIBLE);
+
+        //finally
+
+        final Animation a = new Animation() {
+
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) rootView.findViewById(R.id.alarmSetView).getLayoutParams();
+                params.leftMargin = (int)(200 * interpolatedTime);
+                rootView.findViewById(R.id.alarmSetView).setLayoutParams(params);
+                isVisible = true;
+            }
+        };
+        a.setDuration(500);
+
+        final Animation b = new Animation() {
+
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) rootView.findViewById(R.id.alarmSetView).getLayoutParams();
+                params.leftMargin = 0;
+                rootView.findViewById(R.id.alarmSetView).setLayoutParams(params);
+                isVisible = false;
+
+            }
+        };
+        b.setDuration(500);
+
+        alarmTextHour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openTimePicker();
+                if(!isVisible){
+                    rootView.findViewById(R.id.alarmSetView).startAnimation(a);
+
+                }else{
+                    rootView.findViewById(R.id.alarmSetView).startAnimation(b);
+
+                }
+
             }
         });
-
-        repeatDay = new HashMap<TextView, Boolean>();
 
         repeatDay.put((TextView)rootView.findViewById(R.id.monday), false);
         repeatDay.put((TextView)rootView.findViewById(R.id.tuesday), false);
@@ -173,4 +206,18 @@ public class AlarmFragment extends Fragment implements View.OnClickListener{
         }
     };
 
+    @Override
+    public void onAnimationStart(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
+    }
 }

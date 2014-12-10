@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-class FontedTextView extends TextView {
+public class FontedTextView extends TextView {
     public FontedTextView(Context context) {
         super(context);
         init(context);

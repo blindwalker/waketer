@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="00"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour00" />
+
+            <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="01"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour01" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="02"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour02" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="03"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour03" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="04"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour04" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="05"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour05" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="06"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour06" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="07"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour07" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="08"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour08" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="09"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour09" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="10"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour10" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="11"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour11" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="12"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour12" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="13"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour13" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="14"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour14" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="15"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour15" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="16"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour16" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="17"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour17" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="18"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour18" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="19"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour19" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="20"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour20" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="21"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour21" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="22"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour22" />
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="23"
+            style="@style/selectHourStyle"
+            android:id="@+id/hour23" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+

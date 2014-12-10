@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DateTimepicker/DateTimepicker.iml" filepath="$PROJECT_DIR$/DateTimepicker/DateTimepicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dateslider/dateslider.iml" filepath="$PROJECT_DIR$/dateslider/dateslider.iml" />
-      <module fileurl="file://$PROJECT_DIR$/morphingbutton/morphingbutton.iml" filepath="$PROJECT_DIR$/morphingbutton/morphingbutton.iml" />
       <module fileurl="file://$PROJECT_DIR$/waketer.iml" filepath="$PROJECT_DIR$/waketer.iml" />
     </modules>
   </component>

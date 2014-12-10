@@ -1,2 +1,1 @@
-include ':app', ':morphingbutton', ':DateTimepicker'
-include ':dateslider'
+include ':app'

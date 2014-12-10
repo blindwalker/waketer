@@ -10,28 +10,25 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-import com.zenkun.datetimepicker.time.RadialPickerLayout;
-import com.zenkun.datetimepicker.time.TimePickerDialog;
-
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-import at.kropf.android.morphingbutton.MorphingButton;
 import at.kropf.waketer.R;
 import at.kropf.waketer.helper.AlarmDBHelper;
 import at.kropf.waketer.helper.AlarmManagerHelper;
 import at.kropf.waketer.helper.ClickToggleHelper;
 import at.kropf.waketer.model.AlarmModel;
 
-public class SetAlarmActivity extends FragmentActivity implements View.OnClickListener {    Ringtone rt;
+public class SetAlarmActivity extends FragmentActivity
+        implements View.OnClickListener, Animation.AnimationListener {
+    Ringtone rt;
     RingtoneManager mRingtoneManager;
     Button setAlarm;
     Cursor mcursor;
@@ -39,7 +36,6 @@ public class SetAlarmActivity extends FragmentActivity implements View.OnClickLi
     String title;
     static final int DEFAULTDATESELECTOR_ID = 0;
     private Boolean pickerOpen = false;
-    TimePickerDialog time;
     private AlarmDBHelper dbHelper = new AlarmDBHelper(this);
 
     private AlarmModel alarmDetails;
@@ -50,24 +46,14 @@ public class SetAlarmActivity extends FragmentActivity implements View.OnClickLi
 
     private int currentMinute;
 
+    private LinearLayout hourSlider;
+
     private HashMap<TextView, Boolean> repeatDay;
 
     @Override
     protected void onPause() {
         super.onPause();
     }
-
-    private TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener() {
-        @Override
-        public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
-            alarmText.setText(String.format("%02d", hourOfDay)+":"+
-                    String.format("%02d", minute));
-            currentHour = hourOfDay;
-            currentMinute = minute;
-            pickerOpen = false;
-
-        }
-    };
 
     private void setAlarm(){
         alarmDetails.timeMinute = currentMinute;
@@ -92,38 +78,26 @@ public class SetAlarmActivity extends FragmentActivity implements View.OnClickLi
 
     }
 
-    private void openTimePicker(){
-        if(currentMinute == 0 && currentHour == 0){
-            Calendar c = Calendar.getInstance();
-            currentHour =  c.get(Calendar.HOUR);
-            currentMinute =  c.get(Calendar.MINUTE);
-        }
-        time = TimePickerDialog.newInstance(listener , currentHour, currentMinute, true);
-        if(!pickerOpen){
-            time.show(getSupportFragmentManager(), "Choose wisely");
-            pickerOpen = true;
-
-        }
-
-
-    }
-
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_alarm);
 
-        alarmText = (TextView) findViewById(R.id.alarmTime);
+        alarmText = (TextView) findViewById(R.id.alarmTimeHour);
+
+        //finally
+        final Animation anim = AnimationUtils.loadAnimation(this, R.anim.slide_in_hour_left);
+        anim.setAnimationListener(this);
+        hourSlider = (LinearLayout) findViewById(R.id.hour_slider);
 
         alarmText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openTimePicker();
+                hourSlider.startAnimation(anim);
+
             }
         });
-
-        openTimePicker();
 
         repeatDay = new HashMap<TextView, Boolean>();
 
@@ -248,4 +222,21 @@ public class SetAlarmActivity extends FragmentActivity implements View.OnClickLi
         }
     }
 
+    @Override
+    public void onAnimationStart(Animation animation) {
+        hourSlider.layout(0, -(int)this.getResources().getDimension(R.dimen.hour_slider_offset),
+                hourSlider.getWidth(), hourSlider.getHeight() + (int)this.getResources().getDimension(R.dimen.hour_slider_offset));
+
+        hourSlider.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
+    }
 }

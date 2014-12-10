@@ -5,7 +5,6 @@ android {
     buildToolsVersion "19.1.0"
 
     defaultConfig {
-        applicationId "com.googlecode.android.widgets.DateSlider"
         minSdkVersion 3
         targetSdkVersion 3
     }
@@ -18,7 +17,6 @@ android {
 
     buildTypes {
         release {
-            runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }

@@ -9,10 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/DateTimepicker" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/dateslider" />
-            <option value="$PROJECT_DIR$/morphingbutton" />
           </set>
         </option>
       </GradleProjectSettings>
