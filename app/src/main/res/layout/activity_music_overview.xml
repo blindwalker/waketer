@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@color/quite_black"
+        android:layout_gravity="center"
+        android:columnCount="2">
+    <include layout="@layout/include_music_holder"/>
+
+    <include layout="@layout/include_music_holder"/>
+
+    <include layout="@layout/include_music_holder"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="115dp"
+            android:layout_height="115dp"
+            android:padding="10dp"
+            android:src="@drawable/add_button_music"/>
+
+        <at.kropf.waketer.customviews.FontedTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="Add"/>
+    </LinearLayout>
+    </GridLayout>
+</LinearLayout>
+
+
+
+

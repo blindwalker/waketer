@@ -15,7 +15,7 @@ public class AddBandFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.activity_add_song, container, false);
+        View rootView = inflater.inflate(R.layout.activity_music_overview, container, false);
         return rootView;
     }
 }
